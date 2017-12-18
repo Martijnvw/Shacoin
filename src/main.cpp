@@ -1245,7 +1245,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
     return pblock->GetHash();
 }
 
-static const int64 nStartSubsidy = 10 * COIN;
+static const int64 nStartSubsidy = 50 * COIN;
 static const int64 nMinSubsidy = 1 * COIN;
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
@@ -1266,7 +1266,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 60; // 1 minutes
+static const int64 nTargetTimespan = 600; // 10 minutes
 static const int64 nTargetSpacing = 30; // 30 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 2 blocks
 

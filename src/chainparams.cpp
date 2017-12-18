@@ -25,7 +25,7 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         pchMessageStart[0] = 0x04;
         pchMessageStart[1] = 0x04;
-        pchMessageStart[2] = 0x04;
+        pchMessageStart[2] = 0xb5;
         pchMessageStart[3] = 0x04;
         nDefaultPort = 85530;
         nRPCPort = 85531;
@@ -35,7 +35,7 @@ public:
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
   
-        const char* pszTimestamp = "ShaCoin";
+        const char* pszTimestamp = "ShaCoin timestamp text";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -46,7 +46,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1300000000;
+        genesis.nTime    = 1513622886;
         genesis.nBits    = 0x1e0fffff;
         genesis.nNonce   = 0;
         
@@ -63,13 +63,13 @@ public:
         genesis.print();
         
         
-        assert(hashGenesisBlock == uint256("0x50931a0c7cf4741e0cc7ad59ffe53b938275c9eb6d6b3cfbf399b3b45c1be019"));
-        assert(genesis.hashMerkleRoot == uint256("0x3ee4ea7d0886cb562f27003c15c4e62406c9e18cc031ab754fce99b82f138c79"));
+        assert(hashGenesisBlock == uint256("0x60e1c7c9ff133979af977d6a7c1fc20e9e4c33d228753382b7ec2793707906a5"));
+        assert(genesis.hashMerkleRoot == uint256("0xbb89d6c535fdf42ad3f7367898d1fd8ef7cc6275f3e88640989aa30a19c05b46"));
 
-        vSeeds.push_back(CDNSSeedData("someaddress.com or IP addy", "someaddress.com"));
+        vSeeds.push_back(CDNSSeedData("192.168.56.101", "192.168.56.101"));
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = 36;
+        base58Prefixes[PUBKEY_ADDRESS] = 9;
         base58Prefixes[SCRIPT_ADDRESS] = 30;
         base58Prefixes[SECRET_KEY] = 224;
 
